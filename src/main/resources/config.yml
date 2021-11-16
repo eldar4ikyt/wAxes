@@ -1,0 +1,71 @@
+# Создатель плагина WinLocker - vk.com/winlocker02
+# ----
+# Права:
+# waxes.give - Доступ к команде /axe give
+# waxes.reload - Доступ к команде /axe reload
+# ----
+
+disable-worlds:
+    - 'disable-world'
+
+axes:
+    axe1:
+        item:
+            type: gold_axe
+            title: '&6Метательный топор'
+            lore:
+                - ''
+                - '&e| &fМетательный топор'
+                - ''
+                - '&e> &fЛетит &c6 &fсек.'
+                - '&e> &fУрон &c25 &fединиц.'
+                - ''
+        damage: 10 # Дамаг
+        time: 6 # Время полёта топора
+        particle: flame # Партикл когда топор врезался об что то (https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html)
+        sound: BLOCK_ANVIL_PLACE # Звук когда топор въ*бался (https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html)
+        diminish: true # Убавлять топор на -1 если игрок использовал его
+        effects: # Эффекты которые налаживаются в кого прилетел топор
+            - 'POISON:1:10'
+            - 'SLOW:1:20'
+    axe2:
+        item:
+            type: diamond_axe
+            title: '&bУлучшенный метательный топор'
+            lore:
+                - ''
+                - '&e| &fУлучшенный метательный топор'
+                - ''
+                - '&e> &fЛетит &c15 &fсек.'
+                - '&e> &fУрон &c50 &fединиц.'
+                - ''
+        damage: 15
+        time: 15
+        particle: flame
+        sound: BLOCK_ANVIL_PLACE
+        diminish: true
+        effects:
+            - 'POISON:3:10'
+            - 'SLOW:3:20'
+            - 'WITHER:2:10'
+            - 'HUNGER:2:10'
+            - 'WEAKNESS:2:10'
+        
+messages:
+    prefix: '&6&lТопоры &7&l> &f'
+    no-allowed: 'Нету доступных команд.'
+    no-permission: 'У вас нет прав.'
+    unknown: 'Неизвестная команда.'
+    only-players: 'Команда только для игроков.'
+    player-null: 'Игрок не найден.'
+    axe-null: 'Топор не найден.'
+    axe-nohit: 'Вы никуда не попали, ваш топор был возвращен.'
+    axe-hit: 'Вы попали в &c%name%'
+    give:
+        usage: '&c/axe give <игрок> <топор> &f- Выдать игроку топор'
+        gived: 'Топор успешно выдан.'
+        player-gived: 'Вам был выдан топор: &c%name%'
+    reload:
+        usage: '&c/axe reload &f- Перезагрузить конфиг'
+        reloaded: 'Конфиг перезагружен.'
+        

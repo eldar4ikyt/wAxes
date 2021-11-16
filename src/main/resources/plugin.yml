@@ -1,0 +1,7 @@
+name: wAxes
+version: 1.0
+author: WinLocker
+main: ru.winlocker.waxes.AxesPlugin
+commands:
+    waxe:
+        aliases: [axe]
